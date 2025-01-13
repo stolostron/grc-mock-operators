@@ -1,0 +1,23 @@
+# permissions for end users to view depchannels.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: dep-channel-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: depchannel-viewer-role
+rules:
+- apiGroups:
+  - dep-channel.grc-mock.io.grc-mock.io
+  resources:
+  - depchannels
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - dep-channel.grc-mock.io.grc-mock.io
+  resources:
+  - depchannels/status
+  verbs:
+  - get

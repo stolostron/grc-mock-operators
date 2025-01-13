@@ -1,0 +1,48 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: example-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Example is the Schema for the examples API
+      displayName: Example
+      kind: Example
+      name: examples.example.grc-mock.io
+      version: v1
+  description: example
+  displayName: example-operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: true
+    type: MultiNamespace
+  - supported: false
+    type: AllNamespaces
+  keywords:
+  - grc
+  - openshift
+  - ocm
+  - example
+  - fake
+  links:
+  - name: Example Operator
+    url: https://example-operator.domain
+  maturity: alpha
+  provider:
+    name: quay.io/stolostron-grc
+  version: 0.0.0

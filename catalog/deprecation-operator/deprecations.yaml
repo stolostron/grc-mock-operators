@@ -1,0 +1,18 @@
+---
+schema: olm.deprecations
+package: deprecation-operator
+entries:
+  - reference:
+      schema: olm.bundle
+      name: deprecation-operator.v0.0.1
+    message: |
+      deprecation-operator is deprecated. Uninstall deprecation-operator.v0.0.1.
+  - reference:
+      schema: olm.package
+    message: |
+      deprecation-operator is end of life.  Please don't use this package.
+  - reference:
+      schema: olm.channel
+      name: alpha
+    message: |
+      channel alpha is no longer supported.  Please switch to channel 'stable'.

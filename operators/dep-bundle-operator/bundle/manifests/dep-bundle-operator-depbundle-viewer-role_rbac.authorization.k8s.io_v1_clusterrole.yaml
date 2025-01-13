@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dep-bundle-operator
+  name: dep-bundle-operator-depbundle-viewer-role
+rules:
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles/status
+  verbs:
+  - get

@@ -1,0 +1,27 @@
+# permissions for end users to edit depbundles.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: dep-bundle-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: depbundle-editor-role
+rules:
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles/status
+  verbs:
+  - get

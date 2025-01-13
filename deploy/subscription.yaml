@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: my-subscription
+  namespace: test1
+spec:
+  channel: stable
+  name: deprecation-operator
+  source: grc-mock-source
+  sourceNamespace: olm
+  installPlanApproval: Automatic
