@@ -1,0 +1,23 @@
+# permissions for end users to view depbundles.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: dep-bundle-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: depbundle-viewer-role
+rules:
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - dep-bundle.grc-mock.io.grc-mock.io
+  resources:
+  - depbundles/status
+  verbs:
+  - get

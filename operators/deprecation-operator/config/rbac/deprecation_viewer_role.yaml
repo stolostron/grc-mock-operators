@@ -1,0 +1,23 @@
+# permissions for end users to view deprecations.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: deprecation-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: deprecation-viewer-role
+rules:
+- apiGroups:
+  - deprecation.grc-mock.io
+  resources:
+  - deprecations
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - deprecation.grc-mock.io
+  resources:
+  - deprecations/status
+  verbs:
+  - get

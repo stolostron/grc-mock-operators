@@ -1,0 +1,9 @@
+apiVersion: dep-channel.grc-mock.io.grc-mock.io/v1
+kind: DepChannel
+metadata:
+  labels:
+    app.kubernetes.io/name: dep-channel-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: depchannel-sample
+spec:
+  # TODO(user): Add fields here

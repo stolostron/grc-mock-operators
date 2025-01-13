@@ -1,0 +1,9 @@
+---
+schema: olm.deprecations
+package: dep-channel-operator
+entries:
+  - reference:
+      schema: olm.channel
+      name: alpha
+    message: |
+      channel alpha is no longer supported.  Please switch to channel 'stable'.

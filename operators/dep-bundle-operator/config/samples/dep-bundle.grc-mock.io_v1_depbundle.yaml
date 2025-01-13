@@ -1,0 +1,9 @@
+apiVersion: dep-bundle.grc-mock.io.grc-mock.io/v1
+kind: DepBundle
+metadata:
+  labels:
+    app.kubernetes.io/name: dep-bundle-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: depbundle-sample
+spec:
+  # TODO(user): Add fields here

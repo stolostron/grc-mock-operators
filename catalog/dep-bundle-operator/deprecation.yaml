@@ -1,0 +1,9 @@
+---
+schema: olm.deprecations
+package: dep-bundle-operator
+entries:
+  - reference:
+      schema: olm.bundle
+      name: dep-bundle-operator.v0.0.1
+    message: |
+      dep-bundle-operator.v0.0.1 bundle is no longer supported.

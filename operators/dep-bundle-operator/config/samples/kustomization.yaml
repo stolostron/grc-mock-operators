@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- dep-bundle.grc-mock.io_v1_depbundle.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

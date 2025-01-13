@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - dep-channel.grc-mock.io.grc-mock.io
+  resources:
+  - depchannels
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dep-channel.grc-mock.io.grc-mock.io
+  resources:
+  - depchannels/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dep-channel.grc-mock.io.grc-mock.io
+  resources:
+  - depchannels/status
+  verbs:
+  - get
+  - patch
+  - update
