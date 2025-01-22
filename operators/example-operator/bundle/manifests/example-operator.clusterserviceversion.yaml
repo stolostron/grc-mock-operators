@@ -18,10 +18,10 @@ metadata:
         }
       ]
     capabilities: Basic Install
-    createdAt: "2025-01-20T15:53:35Z"
+    createdAt: "2025-01-23T16:21:19Z"
     operators.operatorframework.io/builder: operator-sdk-v1.39.0
     operators.operatorframework.io/project_layout: go.kubebuilder.io/v4
-  name: example-operator.v0.0.1
+  name: example-operator.v0.0.3
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -178,7 +178,7 @@ spec:
     type: SingleNamespace
   - supported: true
     type: MultiNamespace
-  - supported: false
+  - supported: true
     type: AllNamespaces
   keywords:
   - grc
@@ -192,4 +192,4 @@ spec:
   maturity: alpha
   provider:
     name: quay.io/stolostron-grc
-  version: 0.0.1
+  version: 0.0.3

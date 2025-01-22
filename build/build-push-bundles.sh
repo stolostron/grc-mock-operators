@@ -10,8 +10,11 @@ for dirpath in $(find ${BASE_DIR}/operators -type d -print -mindepth 1 -maxdepth
         operator_name=$(basename ${dirpath})
         echo "* Handling operator ${operator_name} ..."
         build_img="quay.io/stolostron-grc/${operator_name}:latest"
-        make docker-build docker-push IMG=$build_img
-        make bundle IMG=$build_img
+        podman build --platform linux/amd64 -f Dockerfile -t ${build_img}
+        podman push ${build_img}
+
         bundle_img="quay.io/stolostron-grc/${operator_name}-bundle:latest"
-        make bundle-build bundle-push BUNDLE_IMG=$bundle_img
+        make bundle IMG=$build_img
+        podman build --platform linux/amd64 -f bundle.Dockerfile  -t ${bundle_img}
+        podman push ${bundle_img}
     done
