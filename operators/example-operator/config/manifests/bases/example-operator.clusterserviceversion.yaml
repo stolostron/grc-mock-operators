@@ -4,7 +4,7 @@ metadata:
   annotations:
     alm-examples: '[]'
     capabilities: Basic Install
-  name: example-operator.v0.0.0
+  name: example-operator.v0.0.3
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -31,7 +31,7 @@ spec:
     type: SingleNamespace
   - supported: true
     type: MultiNamespace
-  - supported: false
+  - supported: true
     type: AllNamespaces
   keywords:
   - grc
@@ -45,4 +45,4 @@ spec:
   maturity: alpha
   provider:
     name: quay.io/stolostron-grc
-  version: 0.0.0
+  version: 0.0.3
