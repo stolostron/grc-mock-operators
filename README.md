@@ -110,7 +110,7 @@ To use the `operator-sdk` CLI tool, install it as follows:
    ```sh
    kubectl create ns test1
    kubectl create -f catalogSource.yaml
-   kubectl get packagemanifest | grep GRC
+   kubectl get packagemanifest -A | grep GRC
    ```
 
    Example output:
