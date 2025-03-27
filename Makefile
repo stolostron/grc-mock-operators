@@ -32,5 +32,5 @@ catalog-build-push: opm
 	$(OPM) validate ./catalog
 	-$(CONTAINER_TOOL) manifest rm $(MANIFEST)
 	$(CONTAINER_TOOL) manifest create $(MANIFEST)
-	$(CONTAINER_TOOL) build -f catalog.Dockerfile --manifest $(MANIFEST) --platform linux/amd64,linux/arm64
+	$(CONTAINER_TOOL) build -f catalog.Dockerfile --manifest $(MANIFEST) --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
 	$(CONTAINER_TOOL) manifest push $(MANIFEST) $(CATALOG_IMG)
