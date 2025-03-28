@@ -131,7 +131,7 @@ properties:
   value:
     data: eyJhcGlWZXJzaW9uIjoidjEiLCJraW5kIjoiU2VydmljZSIsIm1ldGFkYXRhIjp7ImNyZWF0aW9uVGltZXN0YW1wIjpudWxsLCJsYWJlbHMiOnsiYXBwLmt1YmVybmV0ZXMuaW8vbWFuYWdlZC1ieSI6Imt1c3RvbWl6ZSIsImFwcC5rdWJlcm5ldGVzLmlvL25hbWUiOiJleGFtcGxlLW9wZXJhdG9yIiwiY29udHJvbC1wbGFuZSI6ImNvbnRyb2xsZXItbWFuYWdlciJ9LCJuYW1lIjoiZXhhbXBsZS1vcGVyYXRvci1jb250cm9sbGVyLW1hbmFnZXItbWV0cmljcy1zZXJ2aWNlIn0sInNwZWMiOnsicG9ydHMiOlt7Im5hbWUiOiJodHRwcyIsInBvcnQiOjg0NDMsInByb3RvY29sIjoiVENQIiwidGFyZ2V0UG9ydCI6ODQ0M31dLCJzZWxlY3RvciI6eyJjb250cm9sLXBsYW5lIjoiY29udHJvbGxlci1tYW5hZ2VyIn19LCJzdGF0dXMiOnsibG9hZEJhbGFuY2VyIjp7fX19
 relatedImages:
-- image: quay.io/stolostron-grc/example-operator-bundle:v0.0.3
+- image: quay.io/stolostron-grc/example-operator-bundle:latest
   name: ""
 - image: quay.io/stolostron-grc/example-operator:latest
   name: ""
