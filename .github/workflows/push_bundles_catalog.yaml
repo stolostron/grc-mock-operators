@@ -26,8 +26,10 @@ jobs:
       - name: Build and Tag Operators bundle
         run: |
           # Create local registry
-          sudo apt-get -y update
-          sudo apt-get -y install buildah
+          which podman
+          podman info
+          /home/linuxbrew install podman
+          which podman
           podman info
           make build-bundles
 
