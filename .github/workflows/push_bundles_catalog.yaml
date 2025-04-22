@@ -26,12 +26,10 @@ jobs:
       - name: Build and Tag Operators bundle
         run: |
           # Create local registry
-          which podman
-          podman info
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          brew install podman
-          which podman
-          podman info
+          docker info
+          docker info --format json
+          docker info --format '{{.Version.OsArch}}'
+          exit 1
           make build-bundles
 
       - name: Build and Push Docker Image
