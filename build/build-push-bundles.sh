@@ -24,7 +24,7 @@ do
         echo "::group::Building ${operator_name} for ${arch}"
         ${CONTAINER_TOOL} build -f Dockerfile -t "${operator_name}-${arch}" \
           --platform "linux/${arch}" --build-arg "TARGETARCH=${arch}" \
-          --build-arg "HOSTPLATFORM=${host_platform}"
+          --build-arg "HOSTPLATFORM=${host_platform}" .
         echo "::endgroup::"
     done
     ${CONTAINER_TOOL} manifest create "${build_img}" "${operator_name}-amd64" \
