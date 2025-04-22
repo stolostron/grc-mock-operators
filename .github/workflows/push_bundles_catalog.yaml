@@ -1,5 +1,8 @@
 name: Build and release images
 
+env:
+  CONTAINER_TOOL: 'docker'
+
 on:
   push:
     branches:
@@ -20,16 +23,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v3
 
       - name: Build and Tag Operators bundle
         run: |
           # Create local registry
-          docker info
-          docker info --format json
-          docker info --format '{{.Version.OsArch}}'
-          exit 1
           make build-bundles
 
       - name: Build and Push Docker Image
