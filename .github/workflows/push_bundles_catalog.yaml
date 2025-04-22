@@ -28,7 +28,8 @@ jobs:
           # Create local registry
           which podman
           podman info
-          /home/linuxbrew install podman
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install podman
           which podman
           podman info
           make build-bundles
