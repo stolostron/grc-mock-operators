@@ -32,4 +32,5 @@ catalog-build-push: opm
 	-podman manifest rm $(MANIFEST)
 	podman manifest create $(MANIFEST)
 	podman build -f catalog.Dockerfile --manifest $(MANIFEST) --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
-# podman manifest push $(MANIFEST) $(CATALOG_IMG)
+	echo podman manifest push $(MANIFEST) $(CATALOG_IMG)
+	echo "(faked)"
