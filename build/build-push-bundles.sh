@@ -22,15 +22,15 @@ do
     for arch in amd64 arm64 s390x ppc64le
     do
         echo "::group::Building ${operator_name} for ${arch}"
-        ${CONTAINER_TOOL} build -f Dockerfile -t "${build_img}-${arch}" \
+        ${CONTAINER_TOOL} build -f Dockerfile -t "${build_img}-${arch}:latest" \
           --platform "linux/${arch}" --build-arg "TARGETARCH=${arch}" \
           --build-arg "HOSTPLATFORM=${host_platform}" .
         echo "::endgroup::"
     done
 
     ${CONTAINER_TOOL} manifest rm "${build_img}:latest" || true
-    ${CONTAINER_TOOL} manifest create "${build_img}:latest" "${build_img}-amd64" \
-      "${build_img}-arm64" "${build_img}-s390x" "${build_img}-ppc64le"
+    ${CONTAINER_TOOL} manifest create "${build_img}:latest" "${build_img}-amd64:latest" \
+      "${build_img}-arm64:latest" "${build_img}-s390x:latest" "${build_img}-ppc64le:latest"
 
     if [[ "${CONTAINER_TOOL}" == "podman" ]]; then
         echo podman manifest push "${build_img}:latest" "${build_img}:latest"
