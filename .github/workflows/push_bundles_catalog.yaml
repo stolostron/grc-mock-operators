@@ -26,10 +26,10 @@ jobs:
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v3
 
-      - name: Build and Tag Operators bundle
-        run: |
-          # Create local registry
-          make build-bundles
+      # - name: Build and Tag Operators bundle
+      #   run: |
+      #     # Create local registry
+      #     make build-bundles
 
       - name: Build and Push Docker Image
         run: |

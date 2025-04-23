@@ -39,5 +39,5 @@ catalog-build-push: opm
 	else\
 	  docker build -f catalog.Dockerfile -t $(CATALOG_IMG)\
 	    --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le\
-		--push .
+		--push . ;\
 	fi
