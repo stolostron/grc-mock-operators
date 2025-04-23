@@ -1,6 +1,4 @@
-TAG ?= latest
-CATALOG_IMG = quay.io/stolostron-grc/grc-mock-operators-catalog:$(TAG)
-MANIFEST = grc-mock-operators-catalog-$(TAG)
+CONTAINER_TOOL ?= podman
 
 LOCALBIN ?= $(PWD)/bin
 $(LOCALBIN):
@@ -29,7 +27,4 @@ endif
 .PHONY: catalog-build-push
 catalog-build-push: opm
 	$(OPM) validate ./catalog
-	-podman manifest rm $(MANIFEST)
-	podman manifest create $(MANIFEST)
-	podman build -f catalog.Dockerfile --manifest $(MANIFEST) --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
-	podman manifest push $(MANIFEST) $(CATALOG_IMG)
+	./build/build-push-catalog.sh
