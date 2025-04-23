@@ -30,8 +30,14 @@ endif
 .PHONY: catalog-build-push
 catalog-build-push: opm
 	$(OPM) validate ./catalog
-	-$(CONTAINER_TOOL) manifest rm $(MANIFEST)
-	$(CONTAINER_TOOL) manifest create $(MANIFEST)
-	$(CONTAINER_TOOL) build -f catalog.Dockerfile --manifest $(MANIFEST) --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
-	echo $(CONTAINER_TOOL) manifest push $(MANIFEST) $(CATALOG_IMG)
-	echo "(faked)"
+	@if [[ "$(CONTAINER_TOOL)" == "podman" ]]; then\
+	  podman manifest rm $(MANIFEST) || true;\
+	  podman manifest create $(MANIFEST);\
+	  podman build -f catalog.Dockerfile --manifest $(MANIFEST)\
+	    --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le;\
+	  podman manifest push $(MANIFEST) $(CATALOG_IMG);\
+	else\
+	  docker build -f catalog.Dockerfile -t $(CATALOG_IMG)\
+	    --platform linux/amd64,linux/arm64,linux/s390x,linux/ppc64le\
+		--push .
+	fi

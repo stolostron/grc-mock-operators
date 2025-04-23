@@ -42,7 +42,7 @@ do
 
     bundle_img="quay.io/stolostron-grc/${operator_name}-bundle:latest"
     make bundle "IMG=${build_img}:latest"
-    ${CONTAINER_TOOL} build -f bundle.Dockerfile -t ${bundle_img}
+    ${CONTAINER_TOOL} build -f bundle.Dockerfile -t ${bundle_img} .
     ${CONTAINER_TOOL} push ${bundle_img}
 
     echo "::endgroup::"
